@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>lensedbytomi_ | Mobile Videographer</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0C10;
+            color: #EDEDED;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F1F2A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E54B4B;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 32px;
+            flex-wrap: wrap;
+            background: #0B0C10cc;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(229, 75, 75, 0.2);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+        }
+        .logo span {
+            color: #E54B4B;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #ddd;
+            font-weight: 500;
+            transition: 0.25s ease;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #E54B4B;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at 20% 30%, #101116, #030407);
+        }
+        .hero-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #E54B4B;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #E0AFA0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            max-width: 900px;
+            margin: 0 auto 0.5rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #b0b0c0;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+        .btn-primary {
+            background: #E54B4B;
+            border: none;
+            padding: 12px 32px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 40px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: #c13b3b;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #E54B4B;
+            padding: 10px 24px;
+            border-radius: 40px;
+            color: #E54B4B;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .btn-outline:hover {
+            background: #E54B4B22;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .section-sub {
+            text-align: center;
+            color: #a8a8b5;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 0.9rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .service-card {
+            background: #111218;
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: 0.25s ease;
+            border: 1px solid #252530;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #E54B4B;
+        }
+        .service-card i {
+            font-size: 2rem;
+            color: #E54B4B;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: #b0b0c0;
+            font-size: 0.85rem;
+        }
+
+        /* ===== INSTAGRAM STYLE VIDEO GRID - CLEAN, COMPACT, JUST THUMBNAILS ===== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .video-card {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            background: #1a1a24;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+        .video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        .video-card:hover img {
+            transform: scale(1.03);
+        }
+        .video-card .play-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 30px;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(4px);
+        }
+        .video-card .play-badge i {
+            font-size: 0.65rem;
+            color: #E54B4B;
+        }
+
+        /* responsive grid - changes number of columns on smaller screens */
+        @media (max-width: 700px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3px;
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 500px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+            }
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-text .highlight {
+            color: #E54B4B;
+        }
+        .about-badge {
+            display: inline-block;
+            background: #E54B4B22;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #E54B4B;
+        }
+        .about-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #E54B4B;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: #aaa;
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #0F1017;
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid #252530;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #1E1F2A;
+            border: 1px solid #2C2D3A;
+            border-radius: 14px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #E54B4B;
+        }
+        .contact-info a {
+            color: #EDEDED;
+            text-decoration: none;
+            border-bottom: 1px dashed #E54B4B;
+        }
+        .contact-info a:hover {
+            color: #E54B4B;
+        }
+        .contact-info ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .contact-info li {
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        footer {
+            background: #07080c;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #1e1f28;
+            font-size: 0.75rem;
+        }
+        .bg-accent {
+            background: linear-gradient(145deg, #0c0d14, #07080f);
+        }
+
+        @media (max-width: 880px) {
+            .navbar {
+                padding: 16px 20px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #0B0C10f2;
+                backdrop-filter: blur(20px);
+                padding: 1rem;
+                border-radius: 20px;
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">lensedby<span>tomi_</span></div>
+        <div class="menu-icon" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">HOME</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+            <li><a href="#services" class="nav-link">SERVICES</a></li>
+            <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-tag">MOBILE VIDEOGRAPHER</div>
+            <h1>lensedbytomi_<br>PORTFOLIO</h1>
+            <p>Cinematic storytelling shot entirely on smartphones</p>
+            <a href="#portfolio" class="btn-primary">VIEW WORK <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-title">Services</div>
+            <div class="section-sub">What I do with my mobile rig</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Motion Graphics</h3>
+                    <p>Dynamic titles & animated overlays that elevate mobile footage to broadcast level</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Editing & Color</h3>
+                    <p>Story-driven cuts, pro color grading, fast mobile-first workflow</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Cinematography</h3>
+                    <p>Events, brand stories, reels — shot discreetly with gimbal & cinema rig</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO: CLEAN 3x3 INSTAGRAM STYLE GRID - JUST THUMBNAILS -->
+    <section id="portfolio" class="bg-accent">
+        <div class="container">
+            <div class="section-title">Recent Work</div>
+            <div class="section-sub">Tap any video to watch on Instagram</div>
+            <div class="portfolio-grid" id="videoGrid">
+                <!-- Thumbnails injected here -->
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://instagram.com/lensedbytomi_" target="_blank" class="btn-outline">
+                    <i class="fab fa-instagram"></i> @lensedbytomi_
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-badge"><i class="fas fa-video"></i> mobile-first creator</div>
+                    <h3>About <span class="highlight">lensedbytomi_</span></h3>
+                    <p>Creative mobile videographer producing high-quality video content using smartphones and portable gear. Skilled in shooting, editing, color grading, and motion graphics for brands, events, and social media campaigns. Proficient in CapCut, VN, Premiere Rush, and DaVinci Resolve Mobile. Fast turnaround without compromising quality.</p>
+                    <div class="about-stats">
+                        <div class="stat"><div class="stat-number">51+</div><div class="stat-label">projects</div></div>
+                        <div class="stat"><div class="stat-number">48h</div><div class="stat-label">avg turnaround</div></div>
+                        <div class="stat"><div class="stat-number">4.9</div><div class="stat-label">client rating</div></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <i class="fas fa-quote-right" style="font-size: 1.8rem; color: #E54B4B; opacity: 0.6;"></i>
+                    <p style="font-style: italic; margin-top: 1rem; font-size: 0.9rem;">"Seamless blending into events, yet output looks like high-end commercial. That's the mobile magic."</p>
+                    <br>
+                    <a href="#contact" class="btn-outline">work with me →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">Let's Create</div>
+            <div class="section-sub">Got a project? Let's talk.</div>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt" style="color: #E54B4B;"></i> Contact</h3>
+                    <p style="margin: 15px 0; font-size: 0.85rem;">📍 Worldwide — remote editing & on-site mobile shooting</p>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+2348117587251">0811 758 7251</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:lensedbytomi@gmail.com">lensedbytomi@gmail.com</a></li>
+                        <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/lensedbytomi_" target="_blank">@lensedbytomi_</a></li>
+                    </ul>
+                    <div class="about-badge" style="margin-top: 1rem;">⚡ 48h turnaround for reels</div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" placeholder="Your name" id="name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email address" id="email" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea rows="3" placeholder="Tell me about your project..." id="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send <i class="fas fa-paper-plane"></i></button>
+                        <p id="formFeedback" style="margin-top: 10px; font-size: 0.75rem;"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 lensedbytomi_ — Mobile Videographer & Editor</p>
+</footer>
+
+<script>
+    // Instagram Reel URLs (your 6 videos)
+    const reelUrls = [
+        "https://www.instagram.com/reel/DXv8lUBId92/",
+        "https://www.instagram.com/reel/DWS4-p0CGbs/",
+        "https://www.instagram.com/reel/DWPucbgCFl2/",
+        "https://www.instagram.com/reel/DYO_ZXtIJc5/",
+        "https://www.instagram.com/reel/DX55UsHo62_/",
+        "https://www.instagram.com/reel/DYAE1Q4ooat/"
+    ];
+
+    // Extract shortcode from Instagram URL
+    function getShortcode(url) {
+        const match = url.match(/\/reel\/([A-Za-z0-9_-]+)/);
+        return match ? match[1] : null;
+    }
+
+    // Get high quality thumbnail from Instagram CDN
+    function getThumbnailUrl(shortcode) {
+        return `https://www.instagram.com/p/${shortcode}/media/?size=l`;
+    }
+
+    // Render the 3x3 grid (6 videos for now, but layout stays 3 columns)
+    const gridContainer = document.getElementById('videoGrid');
+    if (gridContainer) {
+        let html = '';
+        reelUrls.forEach((url, idx) => {
+            const shortcode = getShortcode(url);
+            if (shortcode) {
+                const thumbUrl = getThumbnailUrl(shortcode);
+                html += `
+                    <a href="${url}" target="_blank" rel="noopener noreferrer" class="video-card">
+                        <img src="${thumbUrl}" alt="Video ${idx+1}" loading="lazy">
+                        <div class="play-badge">
+                            <i class="fab fa-instagram"></i> Reel
+                        </div>
+                    </a>
+                `;
+            } else {
+                // fallback
+                html += `
+                    <a href="${url}" target="_blank" rel="noopener noreferrer" class="video-card" style="background:#1a1a2e; display:flex; align-items:center; justify-content:center;">
+                        <i class="fab fa-instagram" style="font-size: 2rem; color:#E54B4B;"></i>
+                    </a>
+                `;
+            }
+        });
+        gridContainer.innerHTML = html;
+    }
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
+    });
+
+    // Active link highlight
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + section.offsetHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            if (!name || !email) {
+                feedback.style.color = '#E54B4B';
+                feedback.innerText = 'Please fill in name and email.';
+                return;
+            }
+            feedback.style.color = '#8bc34a';
+            feedback.innerText = `✨ Thanks ${name}! I'll reach out soon.`;
+            contactForm.reset();
+            setTimeout(() => feedback.innerText = '', 4000);
+        });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
