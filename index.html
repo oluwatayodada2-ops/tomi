@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>lensedbytomi_ | Mobile Videographer & Creative Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <title>lensedbytomi_ | Square-Reel Showcase – Mobile Videographer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Instagram Embed Script (for actual video embeds) -->
-    <script async src="//www.instagram.com/embed.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
@@ -22,8 +15,6 @@
             line-height: 1.5;
             overflow-x: hidden;
         }
-
-        /* ========== INTRO VIDEO (MOTION ANIMATION) - SLOWER ========== */
         .intro-overlay {
             position: fixed;
             top: 0;
@@ -39,11 +30,7 @@
             background: radial-gradient(circle at 30% 10%, #0e0b1a, #03010a);
             overflow: hidden;
         }
-        .intro-overlay.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-        /* animated gradient orbs */
+        .intro-overlay.hide { opacity: 0; pointer-events: none; }
         .orb {
             position: absolute;
             border-radius: 50%;
@@ -51,32 +38,9 @@
             opacity: 0.5;
             animation: float 12s infinite alternate ease-in-out;
         }
-        .orb1 {
-            width: 60vmax;
-            height: 60vmax;
-            background: #FF5E3A;
-            top: -20%;
-            left: -20%;
-            animation-duration: 18s;
-        }
-        .orb2 {
-            width: 50vmax;
-            height: 50vmax;
-            background: #FFB347;
-            bottom: -30%;
-            right: -20%;
-            animation-duration: 14s;
-            animation-delay: -3s;
-        }
-        .orb3 {
-            width: 40vmax;
-            height: 40vmax;
-            background: #D946EF;
-            top: 40%;
-            left: 60%;
-            animation-duration: 20s;
-            opacity: 0.3;
-        }
+        .orb1 { width: 60vmax; height: 60vmax; background: #FF5E3A; top: -20%; left: -20%; animation-duration: 18s; }
+        .orb2 { width: 50vmax; height: 50vmax; background: #FFB347; bottom: -30%; right: -20%; animation-duration: 14s; animation-delay: -3s; }
+        .orb3 { width: 40vmax; height: 40vmax; background: #D946EF; top: 40%; left: 60%; animation-duration: 20s; opacity: 0.3; }
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
             100% { transform: translate(10%, 10%) scale(1.1); }
@@ -98,8 +62,6 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            text-shadow: 0 0 20px rgba(255,94,58,0.3);
         }
         .intro-sub {
             font-size: 1.2rem;
@@ -118,17 +80,12 @@
             color: white;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(255, 94, 58, 0.6);
+            box-shadow: 0 0 20px rgba(255,94,58,0.6);
             display: inline-flex;
             align-items: center;
             gap: 12px;
         }
-        .intro-btn:hover {
-            transform: scale(1.05);
-            background: #E84A28;
-            box-shadow: 0 0 35px rgba(255, 94, 58, 0.9);
-        }
-        /* particles canvas */
+        .intro-btn:hover { transform: scale(1.05); background: #E84A28; }
         #particleCanvas {
             position: absolute;
             top: 0;
@@ -138,19 +95,12 @@
             pointer-events: none;
             z-index: 5;
         }
-
-        /* ========== MAIN WEBSITE ========== */
         .main-content {
             opacity: 0;
             transition: opacity 0.8s ease;
             visibility: hidden;
         }
-        .main-content.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* rest of original styles */
+        .main-content.show { opacity: 1; visibility: visible; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F0EFF5; }
         ::-webkit-scrollbar-thumb { background: #FF5E3A; border-radius: 10px; }
@@ -166,12 +116,11 @@
             top: 0;
             z-index: 1000;
             border-bottom: 3px solid #FF5E3A;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
         .logo { font-size: 1.7rem; font-weight: 800; color: #1E1A2F; }
         .logo span { color: #FF5E3A; }
         .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: #1E1A2F; font-weight: 600; transition: 0.2s; font-size: 0.95rem; }
+        .nav-links a { text-decoration: none; color: #1E1A2F; font-weight: 600; transition: 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: #FF5E3A; }
         .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #FF5E3A; }
         .hero {
@@ -180,24 +129,19 @@
             background: linear-gradient(145deg, #FFFBF5, #FFF2E9);
         }
         .hero-tag { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 5px; color: #FF5E3A; font-weight: 700; margin-bottom: 1rem; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; color: #1E1A2F; max-width: 800px; margin: 0 auto 0.5rem; line-height: 1.2; }
-        .hero span { color: #FF5E3A; }
-        .hero p { font-size: 1.1rem; color: #5A4E6E; max-width: 550px; margin: 0 auto 2rem; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; max-width: 800px; margin: 0 auto 0.5rem; }
         .btn-primary {
             background: #FF5E3A;
-            border: none;
             padding: 12px 36px;
             font-size: 1rem;
             font-weight: 700;
             border-radius: 50px;
             color: white;
-            cursor: pointer;
-            transition: 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            box-shadow: 0 8px 16px rgba(255, 94, 58, 0.25);
+            box-shadow: 0 8px 16px rgba(255,94,58,0.25);
         }
         .btn-primary:hover { background: #E84A28; transform: translateY(-2px); }
         .btn-outline {
@@ -207,40 +151,16 @@
             border-radius: 50px;
             color: #FF5E3A;
             font-weight: 700;
-            transition: 0.2s;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
         .btn-outline:hover { background: #FF5E3A; color: white; }
-        .numeric-badge {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0 1rem;
-            flex-wrap: wrap;
-        }
-        .num-item {
-            font-size: 2rem;
-            font-weight: 800;
-            font-family: monospace;
-            color: #FF5E3A;
-            background: #FEF2EC;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            letter-spacing: 2px;
-            border: 1px solid #FFD9CC;
-        }
         section { padding: 70px 0; }
-        .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; color: #1E1A2F; }
+        .section-title { font-size: 2.2rem; font-weight: 800; text-align: center; color: #1E1A2F; }
         .section-sub { text-align: center; color: #6F5B8E; max-width: 600px; margin: 0 auto 2.5rem; font-size: 0.95rem; }
         
-        /* ===== NEW EXPANDABLE SERVICES GRID ===== */
         .services-expandable {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -250,88 +170,140 @@
         .service-category-card {
             background: #FFFFFF;
             border-radius: 28px;
-            transition: all 0.25s ease;
             border: 1px solid #FFDDD0;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: 0.25s;
         }
-        .service-category-card:hover {
-            transform: translateY(-4px);
-            border-color: #FF5E3A;
-            box-shadow: 0 12px 24px rgba(255,94,58,0.08);
-        }
+        .service-category-card:hover { transform: translateY(-4px); border-color: #FF5E3A; }
         .category-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             padding: 1.5rem 1.5rem 1.2rem;
             cursor: pointer;
-            background: #FFFFFF;
-            transition: background 0.2s;
         }
-        .category-header i:first-child {
-            font-size: 2rem;
-            color: #FF5E3A;
-            width: 40px;
-        }
-        .category-header h3 {
-            flex: 1;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #1E1A2F;
-            margin: 0;
-            letter-spacing: -0.2px;
-        }
-        .toggle-icon {
-            font-size: 1.2rem;
-            color: #FF5E3A;
-            transition: transform 0.3s ease;
-        }
-        .service-category-card.expanded .toggle-icon {
-            transform: rotate(180deg);
-        }
+        .category-header i:first-child { font-size: 2rem; color: #FF5E3A; width: 40px; }
+        .category-header h3 { flex: 1; font-size: 1.35rem; font-weight: 700; }
+        .toggle-icon { transition: transform 0.3s; }
+        .service-category-card.expanded .toggle-icon { transform: rotate(180deg); }
         .sub-service-list {
             display: none;
-            padding: 0 1.5rem 1.5rem 1.5rem;
+            padding: 0 1.5rem 1.5rem;
             border-top: 1px solid #FFE4D8;
             background: #FEFAF7;
         }
-        .service-category-card.expanded .sub-service-list {
-            display: block;
-            animation: fadeSlide 0.3s ease;
-        }
+        .service-category-card.expanded .sub-service-list { display: block; animation: fadeSlide 0.3s; }
         @keyframes fadeSlide {
             from { opacity: 0; transform: translateY(-6px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .sub-service-list ul {
-            list-style: none;
-            margin-top: 1rem;
+        .sub-service-list ul { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.7rem; }
+        .sub-service-list li { font-size: 0.9rem; color: #3A2C4A; display: flex; align-items: baseline; gap: 8px; border-bottom: 1px dashed #FFE0D2; padding: 6px 0; }
+        .sub-service-list li i { font-size: 0.75rem; color: #FF5E3A; width: 20px; }
+        
+        /* SQUARE-LIKE PORTFOLIO CARDS — FIXED DIMENSIONS, NO ELONGATION */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .embed-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            border: 1px solid #FFDDD0;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
-            gap: 0.7rem;
+            max-width: 340px;
+            margin: 0 auto;
+            width: 100%;
         }
-        .sub-service-list li {
-            font-size: 0.9rem;
-            color: #3A2C4A;
+        .embed-card:hover {
+            transform: translateY(-6px);
+            border-color: #FF5E3A;
+            box-shadow: 0 20px 28px rgba(255,94,58,0.15);
+        }
+        /* FIXED SQUARE-ISH CONTAINER: FIXED HEIGHT, HIDE OVERFLOW, BUT MAINTAIN COVER IMAGE VISIBILITY */
+        .embed-wrapper {
+            width: 100%;
+            background: #0a0817;
+            position: relative;
+            height: 320px;
+            overflow: hidden;
             display: flex;
-            align-items: baseline;
-            gap: 8px;
-            padding: 6px 0;
-            border-bottom: 1px dashed #FFE0D2;
+            align-items: center;
+            justify-content: center;
+            border-radius: 28px 28px 16px 16px;
         }
-        .sub-service-list li i {
-            font-size: 0.75rem;
-            color: #FF5E3A;
-            width: 20px;
-            text-align: center;
+        /* Instagram & TikTok embeds: force full width, center the visible part (cover image stays visible) */
+        .embed-wrapper blockquote,
+        .embed-wrapper iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            min-width: 100% !important;
+            border-radius: 0 !important;
+            transform: scale(1);
+            height: auto;
+            min-height: 100%;
         }
-        .sub-service-list li strong {
+        /* Ensure the embed content is responsive and doesn't break out */
+        .embed-wrapper .instagram-media,
+        .embed-wrapper .tiktok-embed {
+            margin: 0 auto !important;
+            border-radius: 0 !important;
+            min-width: auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-height: 320px !important;
+        }
+        /* Clean fallback: any iframe inside gets full coverage */
+        .embed-wrapper iframe {
+            height: 100% !important;
+            min-height: 320px;
+        }
+        .embed-caption {
+            padding: 12px 16px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 2px solid #FFEFE8;
+            font-weight: 600;
+            color: #1E1A2F;
+            font-size: 0.8rem;
+        }
+        .embed-caption i {
             color: #FF5E3A;
+            font-size: 1rem;
+        }
+        .embed-platform-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #FEF2EC;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
             font-weight: 700;
-            margin-right: 4px;
         }
-        /* Reviews section styles */
+        /* On smaller screens, keep square proportions */
+        @media (max-width: 750px) {
+            .portfolio-grid { gap: 20px; }
+            .embed-wrapper { height: 280px; }
+            .embed-wrapper .instagram-media,
+            .embed-wrapper .tiktok-embed { min-height: 280px !important; }
+        }
+        @media (max-width: 550px) {
+            .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+            .embed-wrapper { height: 260px; }
+        }
+        /* Reviews, About, Contact unchanged elegance */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -344,93 +316,15 @@
             padding: 1.8rem;
             border: 1px solid #FFDDD0;
             transition: 0.2s;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
         }
-        .review-card:hover {
-            transform: translateY(-5px);
-            border-color: #FFB48A;
-        }
-        .review-stars {
-            color: #FFB347;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-        .review-text {
-            font-style: italic;
-            color: #2E253F;
-            margin: 1rem 0;
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
-        .reviewer {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 1rem;
-            border-top: 1px solid #FFE4D8;
-            padding-top: 1rem;
-        }
-        .reviewer-avatar {
-            width: 44px;
-            height: 44px;
-            background: #FFE2D6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FF5E3A;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .reviewer-info h4 {
-            font-size: 1rem;
-            margin-bottom: 2px;
-        }
-        .reviewer-info p {
-            font-size: 0.7rem;
-            color: #6F5B8E;
-        }
-
-        /* Portfolio grid, about, contact etc remain unchanged */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-        .portfolio-item {
-            background: #F8F6FC;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.2s ease;
-            border: 1px solid #FFD9CC;
-        }
-        .portfolio-item:hover { transform: scale(1.02); border-color: #FF5E3A; }
-        .instagram-embed-wrapper {
-            width: 100%;
-            background: #FFFFFF;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        .instagram-embed-wrapper blockquote {
-            margin: 0 !important;
-            width: 100% !important;
-            min-width: 100% !important;
-        }
-        .portfolio-info {
-            padding: 8px 12px;
-            text-align: center;
-            font-size: 0.7rem;
-            color: #3A2C4A;
-            border-top: 1px solid #FFE0D4;
-        }
-        @media (max-width: 750px) { .portfolio-grid { gap: 12px; } }
-        @media (max-width: 550px) { .portfolio-grid { gap: 8px; } }
-
+        .review-card:hover { transform: translateY(-5px); border-color: #FFB48A; }
+        .review-stars { color: #FFB347; margin-bottom: 1rem; letter-spacing: 2px; }
+        .review-text { font-style: italic; color: #2E253F; margin: 1rem 0; line-height: 1.5; }
+        .reviewer { display: flex; align-items: center; gap: 12px; margin-top: 1rem; border-top: 1px solid #FFE4D8; padding-top: 1rem; }
+        .reviewer-avatar { width: 44px; height: 44px; background: #FFE2D6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FF5E3A; }
         .about-content { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
         .about-text { flex: 1; }
-        .about-text h3 { font-size: 1.9rem; margin-bottom: 1rem; color: #1E1A2F; }
+        .about-text h3 { font-size: 1.9rem; margin-bottom: 1rem; }
         .about-text .highlight { color: #FF5E3A; }
         .about-badge {
             display: inline-block;
@@ -444,9 +338,7 @@
             font-weight: 600;
         }
         .about-stats { display: flex; gap: 2rem; margin-top: 1.5rem; }
-        .stat { text-align: center; }
         .stat-number { font-size: 2rem; font-weight: 800; color: #FF5E3A; }
-        .stat-label { font-size: 0.75rem; color: #6F5B8E; }
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
@@ -464,17 +356,8 @@
             background: white;
             border: 1px solid #FFCDBF;
             border-radius: 24px;
-            color: #1E1A2F;
             font-family: inherit;
-            font-size: 0.9rem;
         }
-        .input-group input:focus, .input-group textarea:focus {
-            outline: none;
-            border-color: #FF5E3A;
-            box-shadow: 0 0 0 3px rgba(255, 94, 58, 0.1);
-        }
-        .contact-info a { color: #1E1A2F; text-decoration: none; border-bottom: 1px solid #FF5E3A; }
-        .contact-info a:hover { color: #FF5E3A; }
         .contact-info ul { list-style: none; margin: 1.2rem 0; }
         .contact-info li { margin: 12px 0; display: flex; align-items: center; gap: 12px; }
         footer { background: #FEF5F0; text-align: center; padding: 1.8rem; border-top: 1px solid #FFDDD2; color: #6F5B8E; font-size: 0.8rem; }
@@ -488,7 +371,6 @@
                 padding: 1rem;
                 border-radius: 20px;
                 margin-top: 1rem;
-                gap: 1rem;
                 border: 1px solid #FFD9CC;
             }
             .nav-links.show { display: flex; }
@@ -496,17 +378,12 @@
             .hero h1 { font-size: 2.2rem; }
             .container { padding: 0 20px; }
             .intro-title { font-size: 2.2rem; }
-            .services-expandable { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 550px) {
-            .services-expandable { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<!-- INTRO OVERLAY (SLOWER ANIMATION) -->
+<!-- INTRO OVERLAY -->
 <div id="introOverlay" class="intro-overlay">
     <canvas id="particleCanvas"></canvas>
     <div class="orb orb1"></div>
@@ -519,14 +396,12 @@
     </div>
 </div>
 
-<!-- MAIN WEBSITE CONTENT -->
+<!-- MAIN WEBSITE -->
 <div id="mainContent" class="main-content">
     <header>
         <nav class="navbar">
             <div class="logo">lensedby<span>tomi_</span></div>
-            <div class="menu-icon" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">HOME</a></li>
                 <li><a href="#about" class="nav-link">ABOUT</a></li>
@@ -543,111 +418,26 @@
             <div class="container">
                 <div class="hero-tag">FOR GENERAL VIDEOGRAPHY COVERAGE</div>
                 <h1>LENSEDBYTOMI_'S<br> PORTFOLIO</h1>
-                <p>Cinematic storytelling shot entirely on smartphones.</p>
+                <p></p>
                 <a href="#about" class="btn-primary">See more about us <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- NEW EXPANDABLE SERVICES SECTION (MAJOR SERVICES WITH SUB-SERVICES) -->
+        <!-- SERVICES (expandable) -->
         <section id="services" style="background: #FFFFFF;">
             <div class="container">
-                <div class="section-title">services</div>
-                <div class="section-sub"></div>
+                <div class="section-title">Services</div>
                 <div class="services-expandable" id="servicesExpandableGrid">
-                    <!-- Category 1: Content & Social Media Management -->
-                    <div class="service-category-card">
-                        <div class="category-header">
-                            <i class="fas fa-hashtag"></i>
-                            <h3>Content & Social Media Management</h3>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sub-service-list">
-                            <ul>
-                                <li><i class="fas fa-tiktok"></i> TikTok Management</li>
-                                <li><i class="fab fa-linkedin"></i> LinkedIn Management</li>
-                                <li><i class="fab fa-twitter"></i> X (Twitter) Management</li>
-                                <li><i class="fas fa-share-alt"></i> Social Media Handling</li>
-                                <li><i class="fas fa-calendar-week"></i> Content Calendar</li>
-                                <li><i class="fas fa-camera-retro"></i> Lifestyle Content Creation</li>
-                                <li><i class="fas fa-newspaper"></i> Newsletter Writing</li>
-                                <li><i class="fas fa-pen-fancy"></i> Blog Post Writing</li>
-                                <li><i class="fas fa-film"></i> Script Writing</li>
-                                <li><i class="fas fa-book-open"></i> Storytelling</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Category 2: Photography Services -->
-                    <div class="service-category-card">
-                        <div class="category-header">
-                            <i class="fas fa-camera"></i>
-                            <h3>Photography Services</h3>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sub-service-list">
-                            <ul>
-                                <li><i class="fas fa-camera-retro"></i> Photo Shoot Sessions</li>
-                                <li><i class="fas fa-birthday-cake"></i> Birthday Shoots</li>
-                                <li><i class="fas fa-building"></i> Corporate Shoots</li>
-                                <li><i class="fas fa-tree"></i> Lifestyle Shoots</li>
-                                <li><i class="fas fa-box-open"></i> Brand/Product Shoots</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Category 3: Event Coverage (Detailed) -->
-                    <div class="service-category-card">
-                        <div class="category-header">
-                            <i class="fas fa-calendar-check"></i>
-                            <h3>Event Coverage</h3>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sub-service-list">
-                            <ul>
-                                <li><i class="fas fa-ring"></i> <strong>Wedding Coverage:</strong> Engagement Ceremony, Proposal Coverage, Traditional Wedding, Reception Coverage</li>
-                                <li><i class="fas fa-child"></i> Naming Ceremony</li>
-                                <li><i class="fas fa-store"></i> Brand Opening Events</li>
-                                <li><i class="fas fa-chalkboard"></i> Corporate Events</li>
-                                <li><i class="fas fa-gift"></i> Birthday Events</li>
-                                <li><i class="fas fa-magic"></i> Any Special Event Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Category 4: Brand & Business Content -->
-                    <div class="service-category-card">
-                        <div class="category-header">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Brand & Business Content</h3>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sub-service-list">
-                            <ul>
-                                <li><i class="fas fa-store-alt"></i> Brand Opening Coverage</li>
-                                <li><i class="fas fa-cube"></i> Product Content Creation</li>
-                                <li><i class="fas fa-bullhorn"></i> Promotional Content</li>
-                                <li><i class="fas fa-theater-masks"></i> Behind-the-Scenes Content</li>
-                                <li><i class="fas fa-microphone-alt"></i> Business Storytelling</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Category 5: Training & Creative Education -->
-                    <div class="service-category-card">
-                        <div class="category-header">
-                            <i class="fas fa-chalkboard-user"></i>
-                            <h3>Training & Creative Education</h3>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sub-service-list">
-                            <ul>
-                                <li><i class="fas fa-video"></i> Content Creation Training</li>
-                                <li><i class="fas fa-users"></i> Social Media Training</li>
-                                <li><i class="fas fa-pen-fancy"></i> Script Writing Training</li>
-                                <li><i class="fas fa-mobile-alt"></i> Mobile Photography/Video Training</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <div class="service-category-card"><div class="category-header"><i class="fas fa-hashtag"></i><h3>Content & Social Media Management</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="sub-service-list"><ul><li><i class="fab fa-tiktok"></i> TikTok Management</li><li><i class="fab fa-linkedin"></i> LinkedIn Management</li><li><i class="fas fa-share-alt"></i> Social Media Handling</li><li><i class="fas fa-calendar-week"></i> Content Calendar</li><li><i class="fas fa-camera-retro"></i> Lifestyle Content Creation</li><li><i class="fas fa-newspaper"></i> Newsletter Writing</li><li><i class="fas fa-pen-fancy"></i> Blog Post Writing</li><li><i class="fas fa-film"></i> Script Writing</li><li><i class="fas fa-book-open"></i> Storytelling</li></ul></div></div>
+                    <div class="service-category-card"><div class="category-header"><i class="fas fa-camera"></i><h3>Photography Services</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="sub-service-list"><ul><li><i class="fas fa-camera-retro"></i> Photo Shoot Sessions</li><li><i class="fas fa-birthday-cake"></i> Birthday Shoots</li><li><i class="fas fa-building"></i> Corporate Shoots</li><li><i class="fas fa-tree"></i> Lifestyle Shoots</li><li><i class="fas fa-box-open"></i> Brand/Product Shoots</li></ul></div></div>
+                    <div class="service-category-card"><div class="category-header"><i class="fas fa-calendar-check"></i><h3>Event Coverage</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="sub-service-list"><ul><li><i class="fas fa-ring"></i> <strong>Wedding Coverage:</strong> Engagement, Proposal, Traditional, Reception</li><li><i class="fas fa-child"></i> Naming Ceremony</li><li><i class="fas fa-store"></i> Brand Opening Events</li><li><i class="fas fa-chalkboard"></i> Corporate Events</li><li><i class="fas fa-gift"></i> Birthday Events</li><li><i class="fas fa-magic"></i> Any Special Event Coverage</li></ul></div></div>
+                    <div class="service-category-card"><div class="category-header"><i class="fas fa-chart-line"></i><h3>Brand & Business Content</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="sub-service-list"><ul><li><i class="fas fa-store-alt"></i> Brand Opening Coverage</li><li><i class="fas fa-cube"></i> Product Content Creation</li><li><i class="fas fa-bullhorn"></i> Promotional Content</li><li><i class="fas fa-theater-masks"></i> Behind-the-Scenes Content</li><li><i class="fas fa-microphone-alt"></i> Business Storytelling</li></ul></div></div>
+                    <div class="service-category-card"><div class="category-header"><i class="fas fa-chalkboard-user"></i><h3>Training & Creative Education</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="sub-service-list"><ul><li><i class="fas fa-video"></i> Content Creation Training</li><li><i class="fas fa-users"></i> Social Media Training</li><li><i class="fas fa-pen-fancy"></i> Script Writing Training</li><li><i class="fas fa-mobile-alt"></i> Mobile Photography/Video Training</li></ul></div></div>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about">
             <div class="container">
                 <div class="about-content">
@@ -655,22 +445,17 @@
                         <div class="about-badge"><i class="fas fa-video"></i> ready for eye-catching memories?</div>
                         <h3>About<br> <span class="highlight">lensedbytomi</span></h3>
                         <p>I am a creative mobile videographer with years of experience producing high-quality video content using smartphones and portable gear. Skilled in shooting, editing, color grading, and motion graphics for brands, events, real estate, and social media campaigns. Proficient in CapCut, VN, Premiere Rush, and DaVinci Resolve Mobile, with a strong eye for storytelling, framing, and pacing. Known for delivering fast turnarounds without compromising quality, working efficiently in low-light and on-location conditions. Passionate about helping startups and enterprises build engaging video content that drives views, engagement, and sales. Available for freelance projects, content packages, and on-site shoots anywhere around the world.</p>
-                        <div class="about-stats">
-                            <div class="stat"><div class="stat-number">51+</div><div class="stat-label">projects completed</div></div>
-                            <div class="stat"><div class="stat-number">48h</div><div class="stat-label">avg turnaround</div></div>
-                            <div class="stat"><div class="stat-number">4.9</div><div class="stat-label">client rating</div></div>
-                        </div>
+                        <div class="about-stats"><div class="stat"><div class="stat-number">51+</div><div class="stat-label">projects completed</div></div><div class="stat"><div class="stat-number">48h</div><div class="stat-label">avg turnaround</div></div><div class="stat"><div class="stat-number">4.9</div><div class="stat-label">client rating</div></div></div>
                     </div>
-              
                 </div>
             </div>
         </section>
 
-        <!-- PORTFOLIO WITH INSTAGRAM VIDEO EMBEDS -->
+        <!-- PORTFOLIO – SQUARE EMBED CARDS (COVER IMAGES VISIBLE, NOT ELONGATED) -->
         <section id="portfolio" style="background: #FEFAF7;">
             <div class="container">
                 <div class="section-title">RECENT MOBILE SHOTS</div>
-                <div class="section-sub">Tap any video to watch on Instagram </div>
+                <div class="section-sub"></div>
                 <div class="portfolio-grid" id="videoGrid"></div>
                 <div style="text-align: center; margin-top: 2.5rem;">
                     <a href="https://instagram.com/lensedbytomi_" target="_blank" rel="noopener noreferrer" class="btn-outline"><i class="fab fa-instagram"></i> @lensedbytomi_ on Instagram</a>
@@ -678,282 +463,182 @@
             </div>
         </section>
 
-        <!-- NEW REVIEWS SECTION -->
+        <!-- REVIEWS -->
         <section id="reviews" style="background: #FFFCF9;">
             <div class="container">
-                <div class="section-title">Client reviews ✨</div>
+                <div class="section-title">Client Reviews ✨</div>
                 <div class="section-sub"></div>
                 <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <div class="review-text">“Those videos are too fine for me to keep. I so much love the videos. Omo you too bad. If I wan do naming, na you I go call”</div>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar"><i class="fas fa-user-alt"></i></div>
-                            <div class="reviewer-info"><h4>Ibukunoluwa</h4><p>Wedding client</p></div>
-                        </div>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <div class="review-text">“Alot of people are viewing my profile, I love your work, I'm glad I chose you”</div>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar"><i class="fas fa-heart"></i></div>
-                            <div class="reviewer-info"><h4>Nifemi</h4><p>Wedding client</p></div>
-                        </div>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <div class="review-text">“The social media content plan and training she delivered transformed our online presence.”</div>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar"><i class="fas fa-chalkboard"></i></div>
-                            <div class="reviewer-info"><h4>Oluwatayo</h4><p>Founder, Tee-Dclean Int'l Concept</p></div>
-                        </div>
-                    </div>
+                    <div class="review-card"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="review-text">“I so much love the videos. Omo you too bad. If I wan do naming, na you I go call. Those videos are too fine for me to keep, thank you babe”</div><div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-user-alt"></i></div><div class="reviewer-info"><h4>Ibukunoluwa</h4><p>wedding client</p></div></div></div>
+                    <div class="review-card"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="review-text">“Omo I don laugh tire for comment section. A lot of people are just viewing my profile, me wey never post anything before. I love your work. I'm glad I chose you.”</div><div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-heart"></i></div><div class="reviewer-info"><h4>Nifemi</h4><p>Wedding clients</p></div></div></div>
+                    <div class="review-card"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="review-text">“The social media content plan and training she delivered transformed our online presence. She doesn't just shoot — she teaches you how to tell your own story.”</div><div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-chalkboard"></i></div><div class="reviewer-info"><h4>Oluwatayo D.</h4><p>Founder, Tee-Dclean Int'l Concept</p></div></div></div>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact">
             <div class="container">
                 <div class="section-title">LET'S CREATE A MEMORABLE EXPERIENCE FOR YOU</div>
                 <div class="section-sub">Visuals that grab attention and result</div>
                 <div class="contact-flex">
-                    <div class="contact-info">
-                        <h3><i class="fas fa-phone-alt" style="color: #FF5E3A;"></i> Get in touch</h3>
-                        <p style="margin: 20px 0;">📍 Based worldwide, remote editing & on-site mobile shooting.<br>📱 Availability is subject to confirmation of your event date.</p>
-                        <ul>
-                            <li><i class="fas fa-phone"></i> <a href="tel:+2348117587251">0811 758 7251</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:afolayanoluwaseyiJosephine@gmail.com">afolayanoluwaseyiJosephine@gmail.com</a></li>
-                            <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/lensedbytomi_" target="_blank">@lensedbytomi_</a></li>
-                        </ul>
-                        <div class="about-badge" style="margin-top: 20px;">⚡ 48h turnaround for social reels</div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="input-group">
-                                <input type="text" placeholder="Your name" id="name" required>
-                            </div>
-                            <div class="input-group">
-                                <input type="email" placeholder="Email address" id="email" required>
-                            </div>
-                            <div class="input-group">
-                                <textarea rows="4" placeholder="Tell me about your event" id="message"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send request <i class="fas fa-paper-plane"></i></button>
-                            <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem;"></p>
-                        </form>
-                    </div>
+                    <div class="contact-info"><h3><i class="fas fa-phone-alt" style="color: #FF5E3A;"></i> Get in touch</h3><p style="margin: 20px 0;">📍 Based worldwide, remote editing & on-site mobile shooting.<br>📱 Availability is subject to confirmation of your event date.</p><ul><li><i class="fas fa-phone"></i> <a href="tel:+2348117587251">0811 758 7251</a></li><li><i class="fas fa-envelope"></i> <a href="mailto:afolayanoluwaseyiJosephine@gmail.com">afolayanoluwaseyiJosephine@gmail.com</a></li><li><i class="fab fa-instagram"></i> <a href="https://instagram.com/lensedbytomi_" target="_blank">@lensedbytomi_</a></li></ul><div class="about-badge" style="margin-top: 20px;">⚡ 48h turnaround for social reels</div></div>
+                    <div class="contact-form"><form id="contactForm"><div class="input-group"><input type="text" placeholder="Your name" id="name" required></div><div class="input-group"><input type="email" placeholder="Email address" id="email" required></div><div class="input-group"><textarea rows="4" placeholder="Tell me about your event" id="message"></textarea></div><button type="submit" class="btn-primary" style="width:100%">Send request <i class="fas fa-paper-plane"></i></button><p id="formFeedback" style="margin-top:12px;"></p></form></div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>© 2026 Afolayan (lensedbytomi_) — Mobile Videographer & Editor</p>
-        <p style="margin-top: 8px; opacity: 0.6;">Fast | Reliable | Authentic</p>
-    </footer>
+    <footer><p>© 2026 Afolayan (lensedbytomi_) — Mobile Videographer & Editor</p><p style="margin-top: 8px; opacity:0.6;">Fast | Reliable | Authentic</p></footer>
 </div>
 
 <script>
-    // ========== PARTICLE BACKGROUND ==========
+    // Particles & intro (unchanged)
     const canvas = document.getElementById('particleCanvas');
     let ctx = canvas.getContext('2d');
     let particles = [];
     let animationId = null;
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     function initParticles() {
-        const particleCount = 100;
         particles = [];
-        for (let i = 0; i < particleCount; i++) {
+        for (let i = 0; i < 100; i++) {
             particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
+                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
                 radius: Math.random() * 3 + 1,
-                alpha: Math.random() * 0.5 + 0.2,
-                speedX: (Math.random() - 0.5) * 0.4,
-                speedY: (Math.random() - 0.5) * 0.3,
+                speedX: (Math.random() - 0.5) * 0.4, speedY: (Math.random() - 0.5) * 0.3,
                 color: `rgba(255, 94, 58, ${Math.random() * 0.5 + 0.2})`
             });
         }
     }
-
     function drawParticles() {
-        if (!ctx) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (let p of particles) {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = p.color;
-            ctx.fill();
-            p.x += p.speedX;
-            p.y += p.speedY;
-            if (p.x > canvas.width) p.x = 0;
-            if (p.x < 0) p.x = canvas.width;
-            if (p.y > canvas.height) p.y = 0;
-            if (p.y < 0) p.y = canvas.height;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+            ctx.fillStyle = p.color; ctx.fill();
+            p.x += p.speedX; p.y += p.speedY;
+            if (p.x > canvas.width) p.x = 0; if (p.x < 0) p.x = canvas.width;
+            if (p.y > canvas.height) p.y = 0; if (p.y < 0) p.y = canvas.height;
         }
         animationId = requestAnimationFrame(drawParticles);
     }
-
-    function startParticles() {
-        resizeCanvas();
-        initParticles();
-        drawParticles();
-    }
-
-    window.addEventListener('resize', () => {
-        if (canvas && canvas.parentElement && !introOverlay.classList.contains('hide')) {
-            resizeCanvas();
-            particles = [];
-            initParticles();
-        }
-    });
-
-    // ========== INTRO BUTTON & REVEAL ==========
+    function startParticles() { resizeCanvas(); initParticles(); drawParticles(); }
+    window.addEventListener('resize', () => { if (!introOverlay.classList.contains('hide')) { resizeCanvas(); initParticles(); } });
+    startParticles();
     const introOverlay = document.getElementById('introOverlay');
     const mainContent = document.getElementById('mainContent');
     const clickBtn = document.getElementById('clickMeBtn');
-
     clickBtn.addEventListener('click', () => {
         introOverlay.classList.add('hide');
         mainContent.classList.add('show');
         if (animationId) cancelAnimationFrame(animationId);
-        if (canvas && canvas.parentNode) canvas.remove();
+        if(canvas) canvas.remove();
     });
 
-    startParticles();
-
-    // ========== EXPANDABLE SERVICES (CLICK MAIN SERVICE) ==========
-    function initExpandableServices() {
-        const categoryCards = document.querySelectorAll('.service-category-card');
-        categoryCards.forEach(card => {
-            const header = card.querySelector('.category-header');
-            header.addEventListener('click', (e) => {
-                e.stopPropagation();
-                card.classList.toggle('expanded');
-            });
-        });
-    }
-    initExpandableServices();
-
-    // ========== INSTAGRAM EMBEDS (videos play on click) ==========
-    const reelUrls = [
-        "https://www.instagram.com/reel/DXv8lUBId92/",
-        "https://www.instagram.com/reel/DWS4-p0CGbs/",
-        "https://www.instagram.com/reel/DWPucbgCFl2/",
-        "https://www.instagram.com/reel/DYO_ZXtIJc5/",
-        "https://www.instagram.com/reel/DX55UsHo62_/",
-        "https://www.instagram.com/reel/DYAE1Q4ooat/"
+    // VIDEO LINKS (Instagram & TikTok)
+    const reelItems = [
+        { url: "https://www.instagram.com/reel/DXv8lUBId92/", platform: "instagram", label: "Golden Hour Reel" },
+        { url: "https://www.instagram.com/reel/DWS4-p0CGbs/", platform: "instagram", label: "Wedding Highlights" },
+        { url: "https://www.instagram.com/reel/DWPucbgCFl2/", platform: "instagram", label: "Brand Story" },
+        { url: "https://www.instagram.com/reel/DYO_ZXtIJc5/", platform: "instagram", label: "Creative Montage" },
+        { url: "https://www.instagram.com/reel/DX55UsHo62_/", platform: "instagram", label: "Event Snippet" },
+        { url: "https://www.instagram.com/reel/DYAE1Q4ooat/", platform: "instagram", label: "Couple Film" },
+        { url: "https://www.tiktok.com/@lensedbytomi/video/7636794941879962901", platform: "tiktok", label: "TikTok Vibe" },
+        { url: "https://www.tiktok.com/@lensedbytomi/video/7637056139603086613", platform: "tiktok", label: "Fast Cut Reel" },
+        { url: "https://www.tiktok.com/@lensedbytomi/video/7635223162791218453", platform: "tiktok", label: "Viral Edit" }
     ];
 
-    function createInstagramEmbed(url) {
-        const cleanUrl = url.split('?')[0];
-        return `
-            <div class="portfolio-item">
-                <div class="instagram-embed-wrapper">
-                    <blockquote class="instagram-media" data-instgrm-permalink="${cleanUrl}" data-instgrm-version="14" style="background:#FFFFFF; border-radius:16px; max-width:100%; min-width:100%; width:100%;">
-                    </blockquote>
-                </div>
-                <div class="portfolio-info">
-                    <i class="fab fa-instagram" style="color:#FF5E3A;"></i> Tap to watch full reel
-                </div>
-            </div>
-        `;
-    }
-
-    function renderInstagramGrid() {
+    function buildEmbedCards() {
         const grid = document.getElementById('videoGrid');
         if (!grid) return;
-        let html = '';
-        reelUrls.forEach(url => {
-            html += createInstagramEmbed(url);
+        grid.innerHTML = '';
+        reelItems.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'embed-card';
+            const wrapper = document.createElement('div');
+            wrapper.className = 'embed-wrapper';
+            if (item.platform === 'instagram') {
+                const blockquote = document.createElement('blockquote');
+                blockquote.className = 'instagram-media';
+                blockquote.setAttribute('data-instgrm-permalink', item.url);
+                blockquote.setAttribute('data-instgrm-version', '14');
+                blockquote.style.width = '100%';
+                wrapper.appendChild(blockquote);
+            } else {
+                const tiktokId = item.url.match(/\/video\/(\d+)/)?.[1] || '';
+                const blockquote = document.createElement('blockquote');
+                blockquote.className = 'tiktok-embed';
+                blockquote.setAttribute('cite', item.url);
+                blockquote.setAttribute('data-video-id', tiktokId);
+                blockquote.style.width = '100%';
+                const section = document.createElement('section');
+                blockquote.appendChild(section);
+                wrapper.appendChild(blockquote);
+            }
+            const caption = document.createElement('div');
+            caption.className = 'embed-caption';
+            const icon = item.platform === 'instagram' ? '<i class="fab fa-instagram"></i>' : '<i class="fab fa-tiktok"></i>';
+            caption.innerHTML = `<span><strong>${item.label}</strong></span><div class="embed-platform-badge">${icon} ${item.platform === 'instagram' ? 'IG Reel' : 'TT Video'}</div>`;
+            card.appendChild(wrapper);
+            card.appendChild(caption);
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) window.open(item.url, '_blank', 'noopener,noreferrer');
+            });
+            grid.appendChild(card);
         });
-        grid.innerHTML = html;
 
-        if (window.instgrm) {
-            window.instgrm.Embeds.process();
-        } else {
-            const checkInstgrm = setInterval(() => {
-                if (window.instgrm && window.instgrm.Embeds) {
-                    window.instgrm.Embeds.process();
-                    clearInterval(checkInstgrm);
-                }
-            }, 300);
-            setTimeout(() => {
-                if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
-            }, 1500);
+        // Load official embed scripts to fetch cover images & interactive previews
+        let igLoaded = false, ttLoaded = false;
+        function processEmbeds() {
+            if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+            if (window.tiktokEmbed && typeof window.tiktokEmbed.load === 'function') window.tiktokEmbed.load();
+            else if (window.tiktokEmbed && window.tiktokEmbed.reload) window.tiktokEmbed.reload();
         }
+        function checkAndProcess() {
+            if (igLoaded && ttLoaded) processEmbeds();
+            else if (igLoaded && !window.tiktokEmbed) setTimeout(checkAndProcess, 200);
+            else if (ttLoaded && !window.instgrm) setTimeout(checkAndProcess, 200);
+            else if (igLoaded && ttLoaded) processEmbeds();
+        }
+        const igScript = document.createElement('script');
+        igScript.src = 'https://www.instagram.com/embed.js';
+        igScript.async = true;
+        igScript.onload = () => { igLoaded = true; checkAndProcess(); };
+        document.head.appendChild(igScript);
+        const ttScript = document.createElement('script');
+        ttScript.src = 'https://www.tiktok.com/embed.js';
+        ttScript.async = true;
+        ttScript.onload = () => { ttLoaded = true; checkAndProcess(); };
+        document.head.appendChild(ttScript);
+        setTimeout(() => { if(window.instgrm) window.instgrm.Embeds.process(); if(window.tiktokEmbed) window.tiktokEmbed.load(); }, 1800);
     }
+    buildEmbedCards();
 
-    renderInstagramGrid();
-
-    // Mobile menu toggle
+    // Expandable services & mobile menu
+    document.querySelectorAll('.service-category-card').forEach(card => {
+        const header = card.querySelector('.category-header');
+        if(header) header.addEventListener('click', () => card.classList.toggle('expanded'));
+    });
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-    }
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('show');
-        });
-    });
+    if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+    document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('show')));
 
-    // Active link highlight
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + section.offsetHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        navItems.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Contact form
     const contactForm = document.getElementById('contactForm');
     const feedback = document.getElementById('formFeedback');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            if (!name || !email) {
-                feedback.style.color = '#FF5E3A';
-                feedback.innerText = 'Please fill in name and email.';
-                return;
-            }
-            feedback.style.color = '#1E8F3E';
-            feedback.innerText = `✨ Thanks ${name}! I'll reach out within 12h to discuss your mobile video project.`;
-            contactForm.reset();
-            setTimeout(() => feedback.innerText = '', 4000);
-        });
-    }
-
-    // Smooth scroll
+    if(contactForm) contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        if(!name) { feedback.style.color = '#FF5E3A'; feedback.innerText = 'Please fill in name.'; return; }
+        feedback.style.color = '#1E8F3E';
+        feedback.innerText = `✨ Thanks ${name}! I'll reach out within 12h.`;
+        contactForm.reset();
+        setTimeout(() => feedback.innerText = '', 4000);
+    });
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href === "#" || href === "") return;
+            if(href === "#" || href === "") return;
             const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
     });
 </script>
