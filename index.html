@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>lensedbytomi_ | Mobile Videographer</title>
+    <title>lensedbytomi_ | Mobile Videographer & Creative Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Instagram Embed Script (for actual video embeds) -->
@@ -240,27 +240,158 @@
         .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; color: #1E1A2F; }
         .section-sub { text-align: center; color: #6F5B8E; max-width: 600px; margin: 0 auto 2.5rem; font-size: 0.95rem; }
         
-        /* Services grid - 4 columns on large, 2 on tablet, 1 on mobile */
-        .services-grid {
+        /* ===== NEW EXPANDABLE SERVICES GRID ===== */
+        .services-expandable {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 1rem;
         }
-        .service-card {
+        .service-category-card {
             background: #FFFFFF;
             border-radius: 28px;
-            padding: 2rem 1.5rem;
-            transition: 0.25s;
+            transition: all 0.25s ease;
             border: 1px solid #FFDDD0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .service-category-card:hover {
+            transform: translateY(-4px);
+            border-color: #FF5E3A;
+            box-shadow: 0 12px 24px rgba(255,94,58,0.08);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 1.5rem 1.2rem;
+            cursor: pointer;
+            background: #FFFFFF;
+            transition: background 0.2s;
+        }
+        .category-header i:first-child {
+            font-size: 2rem;
+            color: #FF5E3A;
+            width: 40px;
+        }
+        .category-header h3 {
+            flex: 1;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1E1A2F;
+            margin: 0;
+            letter-spacing: -0.2px;
+        }
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: #FF5E3A;
+            transition: transform 0.3s ease;
+        }
+        .service-category-card.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .sub-service-list {
+            display: none;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid #FFE4D8;
+            background: #FEFAF7;
+        }
+        .service-category-card.expanded .sub-service-list {
+            display: block;
+            animation: fadeSlide 0.3s ease;
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .sub-service-list ul {
+            list-style: none;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .sub-service-list li {
+            font-size: 0.9rem;
+            color: #3A2C4A;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #FFE0D2;
+        }
+        .sub-service-list li i {
+            font-size: 0.75rem;
+            color: #FF5E3A;
+            width: 20px;
             text-align: center;
         }
-        .service-card:hover { transform: translateY(-6px); border-color: #FF5E3A; }
-        .service-card i { font-size: 2.5rem; color: #FF5E3A; margin-bottom: 1rem; }
-        .service-card h3 { font-size: 1.3rem; margin-bottom: 0.7rem; color: #1E1A2F; }
-        .service-card p { color: #6F5B8E; font-size: 0.9rem; }
+        .sub-service-list li strong {
+            color: #FF5E3A;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+        /* Reviews section styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .review-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            border: 1px solid #FFDDD0;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFB48A;
+        }
+        .review-stars {
+            color: #FFB347;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        .review-text {
+            font-style: italic;
+            color: #2E253F;
+            margin: 1rem 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 1rem;
+            border-top: 1px solid #FFE4D8;
+            padding-top: 1rem;
+        }
+        .reviewer-avatar {
+            width: 44px;
+            height: 44px;
+            background: #FFE2D6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF5E3A;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .reviewer-info h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        .reviewer-info p {
+            font-size: 0.7rem;
+            color: #6F5B8E;
+        }
 
-        /* Portfolio grid with actual Instagram embeds */
+        /* Portfolio grid, about, contact etc remain unchanged */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -365,10 +496,11 @@
             .hero h1 { font-size: 2.2rem; }
             .container { padding: 0 20px; }
             .intro-title { font-size: 2.2rem; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-expandable { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 550px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .services-expandable { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -400,6 +532,7 @@
                 <li><a href="#about" class="nav-link">ABOUT</a></li>
                 <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
                 <li><a href="#services" class="nav-link">SERVICES</a></li>
+                <li><a href="#reviews" class="nav-link">REVIEWS</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
         </nav>
@@ -409,37 +542,107 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-tag">FOR GENERAL VIDEOGRAPHY COVERAGE</div>
-                <h1>LENSEDBYTOMI'S_<br> PORTFOLIO</h1>
+                <h1>LENSEDBYTOMI_'S<br> PORTFOLIO</h1>
                 <p>Cinematic storytelling shot entirely on smartphones.</p>
                 <a href="#about" class="btn-primary">See more about us <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- SERVICES SECTION - UPDATED WITH YOUR 4 OFFERINGS -->
+        <!-- NEW EXPANDABLE SERVICES SECTION (MAJOR SERVICES WITH SUB-SERVICES) -->
         <section id="services" style="background: #FFFFFF;">
             <div class="container">
-                <div class="section-title">Services</div>
+                <div class="section-title">services</div>
                 <div class="section-sub"></div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fab fa-tiktok"></i>
-                        <h3>TikTok / LinkedIn / X Management</h3>
-                        <p>Strategic content planning, posting, engagement & growth across TikTok, LinkedIn, and X (Twitter).</p>
+                <div class="services-expandable" id="servicesExpandableGrid">
+                    <!-- Category 1: Content & Social Media Management -->
+                    <div class="service-category-card">
+                        <div class="category-header">
+                            <i class="fas fa-hashtag"></i>
+                            <h3>Content & Social Media Management</h3>
+                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="sub-service-list">
+                            <ul>
+                                <li><i class="fas fa-tiktok"></i> TikTok Management</li>
+                                <li><i class="fab fa-linkedin"></i> LinkedIn Management</li>
+                                <li><i class="fab fa-twitter"></i> X (Twitter) Management</li>
+                                <li><i class="fas fa-share-alt"></i> Social Media Handling</li>
+                                <li><i class="fas fa-calendar-week"></i> Content Calendar</li>
+                                <li><i class="fas fa-camera-retro"></i> Lifestyle Content Creation</li>
+                                <li><i class="fas fa-newspaper"></i> Newsletter Writing</li>
+                                <li><i class="fas fa-pen-fancy"></i> Blog Post Writing</li>
+                                <li><i class="fas fa-film"></i> Script Writing</li>
+                                <li><i class="fas fa-book-open"></i> Storytelling</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-camera"></i>
-                        <h3>Photo shoot Session</h3>
-                        <p>Professional mobile photography for portraits, products, events, natural lighting or studio feel.</p>
+                    <!-- Category 2: Photography Services -->
+                    <div class="service-category-card">
+                        <div class="category-header">
+                            <i class="fas fa-camera"></i>
+                            <h3>Photography Services</h3>
+                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="sub-service-list">
+                            <ul>
+                                <li><i class="fas fa-camera-retro"></i> Photo Shoot Sessions</li>
+                                <li><i class="fas fa-birthday-cake"></i> Birthday Shoots</li>
+                                <li><i class="fas fa-building"></i> Corporate Shoots</li>
+                                <li><i class="fas fa-tree"></i> Lifestyle Shoots</li>
+                                <li><i class="fas fa-box-open"></i> Brand/Product Shoots</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-ring"></i>
-                        <h3>Engagement Ceremony</h3>
-                        <p>Cinematic coverage of your special day, candid moments, family reactions, and timeless storytelling.</p>
+                    <!-- Category 3: Event Coverage (Detailed) -->
+                    <div class="service-category-card">
+                        <div class="category-header">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>Event Coverage</h3>
+                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="sub-service-list">
+                            <ul>
+                                <li><i class="fas fa-ring"></i> <strong>Wedding Coverage:</strong> Engagement Ceremony, Proposal Coverage, Traditional Wedding, Reception Coverage</li>
+                                <li><i class="fas fa-child"></i> Naming Ceremony</li>
+                                <li><i class="fas fa-store"></i> Brand Opening Events</li>
+                                <li><i class="fas fa-chalkboard"></i> Corporate Events</li>
+                                <li><i class="fas fa-gift"></i> Birthday Events</li>
+                                <li><i class="fas fa-magic"></i> Any Special Event Coverage</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-church"></i>
-                        <h3>Civil Wedding</h3>
-                        <p>Discreet, high-quality mobile videography & photography for civil ceremonies and intimate receptions.</p>
+                    <!-- Category 4: Brand & Business Content -->
+                    <div class="service-category-card">
+                        <div class="category-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Brand & Business Content</h3>
+                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="sub-service-list">
+                            <ul>
+                                <li><i class="fas fa-store-alt"></i> Brand Opening Coverage</li>
+                                <li><i class="fas fa-cube"></i> Product Content Creation</li>
+                                <li><i class="fas fa-bullhorn"></i> Promotional Content</li>
+                                <li><i class="fas fa-theater-masks"></i> Behind-the-Scenes Content</li>
+                                <li><i class="fas fa-microphone-alt"></i> Business Storytelling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Category 5: Training & Creative Education -->
+                    <div class="service-category-card">
+                        <div class="category-header">
+                            <i class="fas fa-chalkboard-user"></i>
+                            <h3>Training & Creative Education</h3>
+                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="sub-service-list">
+                            <ul>
+                                <li><i class="fas fa-video"></i> Content Creation Training</li>
+                                <li><i class="fas fa-users"></i> Social Media Training</li>
+                                <li><i class="fas fa-pen-fancy"></i> Script Writing Training</li>
+                                <li><i class="fas fa-mobile-alt"></i> Mobile Photography/Video Training</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -458,12 +661,7 @@
                             <div class="stat"><div class="stat-number">4.9</div><div class="stat-label">client rating</div></div>
                         </div>
                     </div>
-                    <div class="about-text">
-                        <i class="fas fa-quote-right" style="font-size: 2rem; color: #FF5E3A; opacity: 0.6;"></i>
-                        <p style="font-style: italic; margin-top: 1rem;">"He blended into our event like a guest, yet the output looked like a high-end commercial. That’s the mobile magic." — Oluwatayo D., creative director</p>
-                        <br>
-                        <a href="#portfolio" class="btn-outline">explore my work →</a>
-                    </div>
+              
                 </div>
             </div>
         </section>
@@ -476,6 +674,40 @@
                 <div class="portfolio-grid" id="videoGrid"></div>
                 <div style="text-align: center; margin-top: 2.5rem;">
                     <a href="https://instagram.com/lensedbytomi_" target="_blank" rel="noopener noreferrer" class="btn-outline"><i class="fab fa-instagram"></i> @lensedbytomi_ on Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW REVIEWS SECTION -->
+        <section id="reviews" style="background: #FFFCF9;">
+            <div class="container">
+                <div class="section-title">Client reviews ✨</div>
+                <div class="section-sub"></div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="review-text">“Those videos are too fine for me to keep. I so much love the videos. Omo you too bad. If I wan do naming, na you I go call”</div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar"><i class="fas fa-user-alt"></i></div>
+                            <div class="reviewer-info"><h4>Ibukunoluwa</h4><p>Wedding client</p></div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="review-text">“Alot of people are viewing my profile, I love your work, I'm glad I chose you”</div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar"><i class="fas fa-heart"></i></div>
+                            <div class="reviewer-info"><h4>Nifemi</h4><p>Wedding client</p></div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="review-text">“The social media content plan and training she delivered transformed our online presence.”</div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar"><i class="fas fa-chalkboard"></i></div>
+                            <div class="reviewer-info"><h4>Oluwatayo</h4><p>Founder, Tee-Dclean Int'l Concept</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -535,6 +767,7 @@
 
     function initParticles() {
         const particleCount = 100;
+        particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
@@ -594,6 +827,19 @@
 
     startParticles();
 
+    // ========== EXPANDABLE SERVICES (CLICK MAIN SERVICE) ==========
+    function initExpandableServices() {
+        const categoryCards = document.querySelectorAll('.service-category-card');
+        categoryCards.forEach(card => {
+            const header = card.querySelector('.category-header');
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                card.classList.toggle('expanded');
+            });
+        });
+    }
+    initExpandableServices();
+
     // ========== INSTAGRAM EMBEDS (videos play on click) ==========
     const reelUrls = [
         "https://www.instagram.com/reel/DXv8lUBId92/",
@@ -628,7 +874,6 @@
         });
         grid.innerHTML = html;
 
-        // Process Instagram embeds
         if (window.instgrm) {
             window.instgrm.Embeds.process();
         } else {
@@ -639,9 +884,7 @@
                 }
             }, 300);
             setTimeout(() => {
-                if (window.instgrm && window.instgrm.Embeds) {
-                    window.instgrm.Embeds.process();
-                }
+                if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
             }, 1500);
         }
     }
